@@ -1,0 +1,89 @@
+//param
+@lg: 1024px;
+@up_lg: (@lg + 1);
+@md: 768px;
+@up_md: (@md + 1);
+@md2: @md - 1;
+@up_md2: (@md2 + 1);
+@sm: 576px;
+@up_sm: (@sm + 1);
+@ssm: 450px;
+@up_ssm: (@ssm + 1);
+
+//fn
+.br() {
+  border: 1px solid red;
+}
+.clear() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+.WH(@WH) {
+  width: @WH;
+  height: @WH;
+}
+.W_H(@W, @H) {
+  width: @W;
+  height: @H;
+}
+.room() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.room_f() {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.vt(@align) {
+  &>* {
+    vertical-align: @align;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    vertical-align: @align;
+    width: 0;
+    height: 100%;
+    font-size: 0;
+  }
+}
+.vtc() {
+  .vt(middle);
+}
+.vtb() {
+  .vt(bottom);
+}
+.ctn(@W) {
+  max-width: @W;
+  margin: auto;
+}
+.plus(@WH, @bc: #000000) {
+  position: relative;
+  .WH(@WH);
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: ~"calc(50% - 1px)";
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: @bc;
+    transition: 0.3s ease;
+  }
+  &:not(.active) {
+    &::after {
+      transform: rotate(-90deg);
+    }
+  }
+}

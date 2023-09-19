@@ -1,0 +1,49 @@
+.simple-slider .swiper-slide {
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.simple-slider .swiper-button-next, .simple-slider .swiper-button-prev {
+  width: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+@media (max-width:767px) {
+  .simple-slider .swiper-button-next, .simple-slider .swiper-button-prev {
+    display: none;
+  }
+}
+
+@media (max-width:767px) {
+  .simple-slider .swiper-slide {
+    height: 500px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .h4, h4 {
+  }
+}
+
+.text_2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.swiper-slide {
+  width: 1100px;
+}
+
+.swiper-container {
+  white-space: 700;
+}
+
+.navbar.navbar-default {
+}
+
+.h1, h1 {
+}
+

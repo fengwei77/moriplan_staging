@@ -1,0 +1,234 @@
+@font-face {
+  font-family: 'DINMittelschriftStd';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/DINMittelschriftStd.otf") format("opentype");
+}
+._DIN{
+  font-family: 'DINMittelschriftStd', "Microsoft JhengHei";
+}
+@font-face {
+  font-family: 'FontsFree-Net-HelveticaNeueBold';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/FontsFree-Net-HelveticaNeueBold.ttf") format("truetype");
+}
+._HNB{
+  font-family: 'FontsFree-Net-HelveticaNeueBold', "Microsoft JhengHei";
+}
+@font-face {
+  font-family: 'GenShinGothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/GenShinGothic-P-Bold.ttf") format("truetype");
+}
+._GGB{
+  font-family: 'GenShinGothic', "Microsoft JhengHei";
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'GenShinGothic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/GenShinGothic-P-Medium.ttf") format("truetype");
+}
+._GGM{
+  font-family: 'GenShinGothic', "Microsoft JhengHei";
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'GenShinGothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/GenShinGothic-P-Regular.ttf") format("truetype");
+}
+._GGR{
+  font-family: 'GenShinGothic', "Microsoft JhengHei";
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'KozGoPro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/KozGoPro-Bold.otf") format("opentype");
+}
+._KZB{
+  font-family: 'KozGoPro', "Microsoft JhengHei";
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'KozGoPro';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/KozGoPro-Medium.otf") format("opentype");
+}
+._KZM{
+  font-family: 'KozGoPro', "Microsoft JhengHei";
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'NotoSansTC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/NotoSansTC-Medium.otf") format("opentype");
+}
+._NOTO{
+  font-family: 'NotoSansTC', "Microsoft JhengHei";
+  font-weight: 500;
+}
+//set
+html,
+body {
+  overflow-x: hidden !important;
+  padding: 0;
+  margin: 0;
+  font-family: "微軟正黑體", "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  border: none;
+}
+a {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  background-color: transparent;
+  color: inherit;
+  border: none;
+}
+p {
+  margin: 0;
+}
+img {
+  max-width: 100%;
+  border: none;
+  display: block;
+}
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+span {
+  display: inline-block;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+}
+ul,
+ol {
+  @ul_padding-left: 20px;
+  .ul_none() {
+    list-style: none;
+    padding: 0;
+  }
+  margin: 0;
+  padding-left: @ul_padding-left;
+  &.decimal {
+    list-style: decimal;
+  }
+  &.disc {
+    list-style: disc;
+  }
+  &.upper_alpha {
+    list-style: upper-alpha;
+  }
+  &.cus {
+    .ul_none();
+    & > li {
+      position: relative;
+      padding-left: @ul_padding-left;
+      &::before {
+        content: attr(str);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    &._gh {
+      & > li {
+        &::before {
+          content: "(" attr(str) ")";
+        }
+      }
+    }
+    &._num {
+      & > li {
+        &:nth-child(n + 10) {
+          padding-left: @ul_padding-left + 8;
+        }
+      }
+    }
+  }
+  &.none {
+    .ul_none();
+  }
+  x {
+    font-weight: bold;
+    font-size: 110%;
+  }
+}
+//public
+.clear {
+  .clear();
+}
+.vtc {
+  .vtc();
+}
+//rwd
+@media (min-width: @up_lg) {
+  .up_lg_hide {
+    display: none !important;
+  }
+}
+@media (max-width: @lg) {
+  .lg_hide {
+    display: none !important;
+  }
+}
+@media (min-width: @up_md) {
+  .up_md_hide {
+    display: none !important;
+  }
+}
+@media (max-width: @md) {
+  .md_hide {
+    display: none !important;
+  }
+}
+@media (min-width: @up_md2) {
+  .up_md2_hide {
+    display: none !important;
+  }
+}
+@media (max-width: @md2) {
+  .md2_hide {
+    display: none !important;
+  }
+}
+@media (min-width: @up_sm) {
+  .up_sm_hide {
+    display: none !important;
+  }
+}
+@media (max-width: @sm) {
+  .sm_hide {
+    display: none !important;
+  }
+}
+@media (min-width: @up_ssm) {
+  .up_ssm_hide {
+    display: none !important;
+  }
+}
+@media (max-width: @ssm) {
+  .ssm_hide {
+    display: none !important;
+  }
+}
